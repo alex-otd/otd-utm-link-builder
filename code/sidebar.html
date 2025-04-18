@@ -1,0 +1,63 @@
+<div style="font-family: Roboto, sans-serif; padding: 16px;">
+    <!-- Title + Logo -->
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <img src="http://onethingdigital.com/wp-content/uploads/2025/04/one-thing-digital_utm-logo.png" alt="UTM Logo" width="40" height="40">
+      <h2 style="font-size: 18px; margin: 0;">UTM Link Builder</h2>
+    </div>
+  
+    <!-- Description -->
+    <p style="font-size: 14px; margin-top: 8px;">
+      Automatically generate UTM tracking URLs in your Google Sheet to simplify campaign tracking.
+    </p>
+  
+    <!-- Instructions -->
+    <h3 style="font-size: 14px; margin-top: 20px;">How to Use</h3>
+    <ol style="font-size: 13px; padding-left: 16px;">
+      <li>Enter campaign info in columns B–G</li>
+      <li>Leave column H blank</li>
+      <li>URLs with UTM parameters will appear in column H</li>
+    </ol>
+  
+    <!-- Default Template Dropdown -->
+    <label for="templateSelect" style="font-size: 13px; margin-top: 20px; display: block;">Insert Default Template:</label>
+    <select id="templateSelect" onchange="applyTemplate()" style="width: 100%; font-size: 13px; margin-bottom: 16px;">
+      <option value="">Select source/medium...</option>
+      <option value="facebook/social">Facebook / Social</option>
+      <option value="meta/social">Meta / Social</option>
+      <option value="instagram/social">Instagram / Social</option>
+      <option value="twitter/social">Twitter / Social</option>
+      <option value="linkedin/social">LinkedIn / Social</option>
+      <option value="referral/referral">Referral / Referral</option>
+      <option value="email/email">Email / Email</option>
+    </select>
+  
+    <!-- Buttons -->
+    <button onclick="google.script.run.createFormattedUTMSheet()" style="width: 100%; margin-top: 8px;">Create New UTM Sheet</button>
+    <button onclick="google.script.run.refreshUTMLinks()" style="width: 100%; margin-top: 4px;">Rebuild All URLs</button>
+    <button onclick="google.script.run.clearAllUTMLinks()" style="width: 100%; margin-top: 8px;">Clear All URLs</button>
+  
+    <!-- Settings Section -->
+    <h3 style="font-size: 14px; margin-top: 20px;">Settings (Coming Soon)</h3>
+    <ul style="font-size: 13px; padding-left: 16px;">
+      <li>Case Options (e.g., lowercase vs. Title Case)</li>
+      <li>UTM Defaults</li>
+      <li>Link Shortener Integration</li>
+    </ul>
+  
+    <!-- Documentation Link -->
+    <p style="margin-top: 16px; font-size: 12px;">
+      <a href="https://github.com/your-repo/utm-builder" target="_blank">View documentation on GitHub</a>
+    </p>
+  </div>
+  
+  <script>
+  function applyTemplate() {
+    const val = document.getElementById('templateSelect').value;
+    if (!val) return;
+    const [source, medium] = val.split('/');
+    google.script.run.withSuccessHandler(() => {
+      document.getElementById('templateSelect').selectedIndex = 0;
+    }).applyUTMTemplate(source, medium);
+  }
+  </script>
+  
