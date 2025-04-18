@@ -74,9 +74,6 @@ Designed for editing with VS Code
 Modular structure (main.gs, utmBuilder.gs, utils.gs, etc.)
 
 📁 Folder Structure
-plaintext
-Copy
-Edit
 utm-builder/
 ├── .clasp.json
 ├── appsscript.json
@@ -107,11 +104,3 @@ See full usage instructions, screenshots, and examples here:
 💬 Feedback & Contributions
 Pull requests, suggestions, and feedback are welcome.
 Open an issue or fork the repo to contribute.
-
-yaml
-Copy
-Edit
-
----
-
-Would you like a matching `LICENSE` file (MIT)? Or a `CONTRIBUTING.md` template if you’re opening this up to collaborators?

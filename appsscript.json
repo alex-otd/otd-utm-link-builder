@@ -1,28 +1,7 @@
 {
-    "timeZone": "America/New_York",
-    "dependencies": {},
-    "exceptionLogging": "STACKDRIVER",
-    "oauthScopes": [
-      "https://www.googleapis.com/auth/spreadsheets.currentonly",
-      "https://www.googleapis.com/auth/script.container.ui"
-    ],
-    "addOns": {
-      "common": {
-        "name": "UTM Link Builder",
-        "logoUrl": "https://yourdomain.com/logo.png",
-        "layoutProperties": {
-          "primaryColor": "#013b5e"
-        },
-        "useLocaleFromApp": true,
-        "homepageTrigger": {
-          "runFunction": "showSidebar"
-        }
-      },
-      "sheets": {
-        "homepageTrigger": {
-          "enabled": true
-        }
-      }
-    }
-  }
-  
+  "timeZone": "America/New_York",
+  "dependencies": {
+  },
+  "exceptionLogging": "STACKDRIVER",
+  "runtimeVersion": "V8"
+}
